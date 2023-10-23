@@ -134,6 +134,7 @@ def main(argv):
         devices=[FLAGS.gpu],
         callbacks=callbacks,
         log_every_n_steps=10,
+        max_epochs=-1,
         **val_check,
     )
 
