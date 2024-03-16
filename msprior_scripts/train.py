@@ -136,7 +136,7 @@ def main(argv):
         devices=[FLAGS.gpu],
         callbacks=callbacks,
         log_every_n_steps=10,
-        max_epochs='epochs',
+        max_epochs=FLAGS.epochs,
         **val_check,
     )
 
