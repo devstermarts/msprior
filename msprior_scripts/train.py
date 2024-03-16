@@ -43,7 +43,9 @@ flags.DEFINE_float('ema',
 flags.DEFINE_integer("val_every",
                      default=1000,
                      help="validate training every n step.")
-
+flags.DEFINE_integer("epochs",
+                     default=1000,
+                     help="max amount of epochs for training.")
 
 def add_ext(config: str):
     if config[-4:] != ".gin":
@@ -134,7 +136,7 @@ def main(argv):
         devices=[FLAGS.gpu],
         callbacks=callbacks,
         log_every_n_steps=10,
-        max_epochs=-1,
+        max_epochs='epochs',
         **val_check,
     )
 
