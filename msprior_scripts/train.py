@@ -45,7 +45,7 @@ flags.DEFINE_integer("val_every",
                      help="validate training every n step.")
 flags.DEFINE_integer("epochs",
                      default=1000,
-                     help="max amount of epochs for training.")
+                     help="max amount of epochs for training. Use -1 to disable auto stopping. ")
 
 def add_ext(config: str):
     if config[-4:] != ".gin":
